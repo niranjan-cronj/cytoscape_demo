@@ -19,11 +19,11 @@ const icon_uri = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2
 
 const node_style = {
   label: "data(id)",
-  "background-image": node4_img_uri,
+  "background-image": node3_img_uri,
   // "background-fit": "contain",
   "background-fit": "cover",
-  width: "50px",
-  height: "50px",
+  width: "150px",
+  height: "150px",
   "background-color": "#666",
   "border-color": "#000000",
   "border-width": 3,
@@ -728,24 +728,32 @@ const alarm_example = () => {
         data: {
           id: "outer_node",
         },
+        position: { x: 100, y: 100 },
       },
       {
         data: { id: "icon1", parent: "outer_node" },
+        position: { x: 180, y: 120 },
       },
     ],
     minZoom: 0.1,
     maxZoom: 2,
   });
 
-  cy.style().selector("outer_node").style(node_style).update();
+  cy.style().selector("#outer_node").style(node_style).update();
   cy.style()
-    .selector("icon1")
+    .selector("#icon1")
     .style({
-      "background-image": node3_img_uri,
+      "background-image": icon_uri,
       "background-fit": "contain",
       label: "",
-      // width: "100px",
-      // height: "100px",
+      position: "absolute",
+      top: "0", // Align the top edge of the inner node with the top edge of the outer node
+      right: "0", // Align the right edge of the inner node with the right edge of the outer node
+      "z-index": "10", // Ensure that the inner node appears above the outer node
+      // "background-offset-y": "2px",
+      width: "10px",
+      height: "10px",
+      // "padding-left": "20px",
     })
     .update();
 
