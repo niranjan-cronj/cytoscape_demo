@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="cytoscape.min.js"></script>
+    <!-- <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Promise,fetch"></script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="parent-div">
+      <div class="menu-div">
+        <button id="clear" class="menu-items">Clear</button>
+        <button id="zoom-in" class="menu-items">Zoom In</button>
+        <button id="zoom-out" class="menu-items">Zoom Out</button>
+        <button id="example-1" class="menu-items">Show Nodes and TLs</button>
+        <button id="example-2" class="menu-items">
+          Show Nodes and TLs with number on top.
+        </button>
+        <button id="nodes_1000" class="menu-items">
+          Show Thousand nodes and TLs
+        </button>
+        <button id="nodes_5000" class="menu-items">
+          Show 5000 nodes and TLs with label
+        </button>
+        <button id="failed_con_tl_example">Failed Connection TL example</button>
+        <button id="partition_node_example">
+          Different partition node connection example
+        </button>
+        <button id="many_edges_example">Many TLs between two nodes</button>
+        <button id="clickable_graph">Clickable graph</button>
+        <button id="alarm_example">Alarm icon example</button>
+      </div>
+      <div id="main-div">
+        <h1 id="heading">Graph will be shown here</h1>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
